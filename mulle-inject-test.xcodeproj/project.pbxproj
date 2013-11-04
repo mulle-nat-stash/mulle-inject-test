@@ -27,6 +27,8 @@
 		411668E71826C1C5003CB8D4 /* mulle_inject_code.c in Sources */ = {isa = PBXBuildFile; fileRef = 411668E51826C1A5003CB8D4 /* mulle_inject_code.c */; };
 		411669181826C5E0003CB8D4 /* mulle-injected-code.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 411669171826C5E0003CB8D4 /* mulle-injected-code.dylib */; };
 		411669221826C9E7003CB8D4 /* mulle_injection_victim.c in Sources */ = {isa = PBXBuildFile; fileRef = 411669211826C9E7003CB8D4 /* mulle_injection_victim.c */; };
+		412253911826E4A7009B278A /* libSystem.B.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 412253901826E4A7009B278A /* libSystem.B.dylib */; };
+		412253931826E4C5009B278A /* bundle1.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 412253921826E4C5009B278A /* bundle1.o */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		4116691F1826C9E7003CB8D4 /* mulle-injection-victim */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "mulle-injection-victim"; sourceTree = BUILT_PRODUCTS_DIR; };
 		411669211826C9E7003CB8D4 /* mulle_injection_victim.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = mulle_injection_victim.c; path = src/mulle_injection_victim.c; sourceTree = "<group>"; };
 		4116692B1826D94A003CB8D4 /* mulle-injected-code.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = "mulle-injected-code.dylib"; sourceTree = BUILT_PRODUCTS_DIR; };
+		412253901826E4A7009B278A /* libSystem.B.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSystem.B.dylib; path = usr/lib/libSystem.B.dylib; sourceTree = SDKROOT; };
+		412253921826E4C5009B278A /* bundle1.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = bundle1.o; path = usr/lib/bundle1.o; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				412253931826E4C5009B278A /* bundle1.o in Frameworks */,
+				412253911826E4A7009B278A /* libSystem.B.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +106,7 @@
 				411668C71826B17A003CB8D4 /* mulle_injected_code.c */,
 				411669211826C9E7003CB8D4 /* mulle_injection_victim.c */,
 				411668E91826C34B003CB8D4 /* mach_inject */,
+				41237F3318283A7B00232E6C /* Libraries */,
 				4116691A1826C5FE003CB8D4 /* Products */,
 				411669191826C5E0003CB8D4 /* mulle-inject-code */,
 				411669171826C5E0003CB8D4 /* mulle-injected-code.dylib */,
@@ -122,6 +129,15 @@
 			children = (
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		41237F3318283A7B00232E6C /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				412253921826E4C5009B278A /* bundle1.o */,
+				412253901826E4A7009B278A /* libSystem.B.dylib */,
+			);
+			name = Libraries;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -380,6 +396,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				LINK_WITH_STANDARD_LIBRARIES = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -390,6 +407,7 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				LINK_WITH_STANDARD_LIBRARIES = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

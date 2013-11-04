@@ -1,11 +1,15 @@
-# THIS DOES NOT (ALWAYS) WORK
+# This example demonstrates how to inject a shared library into another process
 
-This is a failed attempt to inject code in 10.9 into the Dock. But on it's own,
-with it's little test case, it is running fine. It uses the [mach_inject](https://github.com/rentzsch/mach_inject) by Jonathan 'Wolf' Rentzsch. 
+On it's own, with its little test case, it is running fine. 
+It uses the [mach_inject](https://github.com/rentzsch/mach_inject) code 
+by Jonathan 'Wolf' Rentzsch.
 
-## The Dock doesn't like it though 
+## The Dock doesn't like it though
 
-A prerequsit for running is finding out the pid of the Dock by running and
+I wrote this actually to inject code into the Dock process. It didn't work out. 
+You can try it yourself.
+
+A prerequisite for running is to find out the pid of the Dock by running and
 setting the only argument of the tool. (As soon as the Dock crashes you have to
 do it again.)
 
